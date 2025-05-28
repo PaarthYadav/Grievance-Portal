@@ -1,127 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grievance Portal, mouse</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #ffb6c1, #ff69b4);
-      color: #333;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 400px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #fff0f5;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input, textarea, select, button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-size: 1em;
-    }
-    button {
-      background-color: #ff69b4;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #ff1493;
-    }
-    .message {
-      background-color: #ffe6f0;
-      padding: 10px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container" id="login-container">
-    <h2>Grievance Portal, cutie</h2>
-    <p>As requested, you can submit your lame made-up grievances for my viewing pleasure</p>
-    <p>Log in to your account:</p>
-    <input type="text" placeholder="Username" id="username" />
-    <input type="password" placeholder="Password" id="password" />
-    <button onclick="login()">Login</button>
-  </div>
-
-  <div class="container" id="grievance-form" style="display:none;">
-    <h2>What's bothering you?</h2>
-    <input type="text" id="name" placeholder="Your Name" />
-    <input type="text" id="title" placeholder="Title" />
-    <textarea id="description" placeholder="What's bothering you?"></textarea>
-    <label>Mood:</label>
-    <select id="mood">
-      <option value="furious">🤬</option>
-      <option value="angry">😡</option>
-      <option value="sad">😢</option>
-      <option value="annoyed">😒</option>
-    </select>
-    <label>Severity:</label>
-    <select id="severity">
-      <option value="low">Low</option>
-      <option value="medium">Medium</option>
-      <option value="high">High</option>
-    </select>
-    <button onclick="submitGrievance()">Submit</button>
-  </div>
-
-  <div class="container message" id="thank-you" style="display:none;">
-    <h2 id="thank-you-heading">Thank you 💖</h2>
-    <p>Your grievance has been sent to Paarth 💌</p>
-    <p>He will get back to you very soon!<br>(He will think about it)</p>
-    <button onclick="resetForm()">Submit Another</button>
-  </div>
-
-  <script>
-    function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      if (username && password) {
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('grievance-form').style.display = 'block';
-      } else {
-        alert("Please enter both username and password.");
-      }
-    }
-
-    function submitGrievance() {
-      const name = document.getElementById('name').value;
-      if (name) {
-        document.getElementById('thank-you-heading').innerText = `Thank you, ${name} 💖`;
-      } else {
-        document.getElementById('thank-you-heading').innerText = `Thank you 💖`;
-      }
-      document.getElementById('grievance-form').style.display = 'none';
-      document.getElementById('thank-you').style.display = 'block';
-    }
-
-    function resetForm() {
-      document.getElementById('thank-you').style.display = 'none';
-      document.getElementById('grievance-form').style.display = 'block';
-      document.getElementById('name').value = "";
-      document.getElementById('title').value = "";
-      document.getElementById('description').value = "";
-      document.getElementById('mood').value = "angry";
-      document.getElementById('severity').value = "low";
-    }
-  </script>
-</body>
-</html> -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,21 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grievance Portal, cutie</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom right, #ffb6c1, #ff69b4);
       color: #333;
-      text-align: center;
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
     .container {
+      width: 100%;
       max-width: 400px;
-      margin: 30px auto;
       padding: 20px;
       background: #fff0f5;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
     input, textarea, select, button {
       width: 100%;
@@ -152,30 +35,41 @@
       border-radius: 10px;
       border: 1px solid #ccc;
       font-size: 1em;
+      display: block;
+    }
+    textarea {
+      height: 100px;
+      resize: vertical;
     }
     button {
       background-color: #ff69b4;
-      color: white;
+      color: rgb(255, 255, 255);
       border: none;
       cursor: pointer;
     }
     button:hover {
-      background-color: #ff1493;
+      background-color: #ffffff;
+    }
+    .mood-select {
+      height: 25px;
+      font-size: 1.1em;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Grievance Portal for cutie</h2>
-    <p>Here you can yap all you want or submit your very serious (obviously not lame or made-up) grievances for my viewing pleasure</p>
+    <h2>Grievance Portal for cutie 🎀</h2>
+    <p style="line-height: 1.8;">
+      Here you can yap all you want 🗣️ or <br>
+      Submit your very serious complaints for my viewing pleasure
+    </p>
     
-    <!-- FORMSTART -->
     <form action="https://formsubmit.co/paarthdel@gmail.com" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <textarea name="description" placeholder="What's bothering you?" required></textarea>
 
       <label>Mood:</label>
-      <select name="mood">
+      <select name="mood" class="mood-select">
         <option value="happy">😇</option>
         <option value="sad">😢</option>
         <option value="annoyed">😒</option>
@@ -190,15 +84,12 @@
         <option value="high">High</option>
       </select>
 
-      <!-- Hidden config -->
       <input type="hidden" name="_next" value="https://PaarthYadav.github.io/Grievance-Portal/thankyou.html">
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="_honey" style="display:none">
 
       <button type="submit">Submit</button>
     </form>
-    <!-- FORMEND -->
-
   </div>
 </body>
 </html>
