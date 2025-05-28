@@ -50,9 +50,15 @@
     }
     button:hover {
       background-color: #ffffff;
+      color:#ff69b4;
+      border: 2px solid #ff69b4;
     }
     .mood-select {
       height: 43px;
+      font-size: 1.1em;
+    }
+    .severity-select {
+      height: 35px;
       font-size: 1.1em;
     }
   </style>
@@ -62,14 +68,14 @@
     <h2>Grievance Portal for cutie 🎀</h2>
     <p style="line-height: 1.8;">
       Here you can yap all you want 🗣️ or <br>
-      Submit your very serious complaints for my viewing pleasure
+      Submit your serious complaints for my viewing pleasure 🤙
     </p>
     
     <form action="https://formsubmit.co/paarthdel@gmail.com" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <textarea name="description" placeholder="What's bothering you?" required></textarea>
 
-      <label>Mood:</label>
+      <label>Mood</label>
       <select name="mood" class="mood-select">
         <option value="happy">😇🐣</option>
         <option value="sad">😢</option>
@@ -78,8 +84,8 @@
         <option value="furious">🤬</option>
       </select>
 
-      <label>Severity:</label>
-      <select name="severity">
+      <label>Severity</label>
+      <select name="severity" class="severity-select">
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
@@ -89,7 +95,7 @@
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="_honey" style="display:none">
 
-      <button type="submit">Submit</button>
+      <button type="submit"><b>Submit</b></button>
     </form>
   </div>
 </body>
